@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resume Upload</title>
 </head>
+
 <body>
-    <h2>Home page of resume analyzer</h2>
+
+    <h1>Resume Analyzer</h1>
+
+    <h2>Upload Resume</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Upload Resume
+        </button>
+
+    </form>
+
+
+    {% if resume %}
+
+        <h3>Resume uploaded successfully!</h3>
+
+        <p>
+            File: {{ resume.file.name }}
+        </p>
+        <p>
+            {{ resume.extract_text }}
+        </p>
+
+    {% endif %}
+
+    {% if skills %}
+        <h3>Extracted Skills:</h3>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
 </body>
+
 </html>

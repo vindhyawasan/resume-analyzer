@@ -1,0 +1,23 @@
+SKILLS = [
+    "python",
+    "java",
+    "javascript",
+    "html",
+    "css",
+    "django",
+    "flask",
+    "react",
+    "node.js",
+    "mysql",
+    "mongodb",
+    "postgresql",
+    "git",
+    "github",
+    "docker",
+    "aws",
+    "machine learning",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "rest api"
+]
